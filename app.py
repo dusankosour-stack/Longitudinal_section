@@ -8,6 +8,11 @@ import streamlit as st                            # webové rozhraní
 import math                                       # matematické funkce (floor, log10...)
 import io                                         # pro uložení grafu do paměti místo souboru na disku
 import time
+from PIL import Image                               
+
+#Favicon
+icon = Image.open("icon.png")
+st.set_page_config(page_title="Podélné profily", page_icon=icon)
 
 
 # --- Načtení statických souborů ---
@@ -1046,3 +1051,4 @@ else:
         st.error(f"Chyba při ukládání grafu: {e}")
     finally:
         plt.close(fig_save)
+
